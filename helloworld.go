@@ -37,4 +37,13 @@ func main() {
 	// fmt.Println(b)
 	fmt.Println(abd)
 
+	// array
+
+	var arr1 = [3]int{1, 2, 3}
+	arr2 := [2]string{"asad", "santo"}
+	fmt.Println(arr1)
+	arr2[0] = "rename asad"
+	fmt.Println(len(arr2))
+	var arr3 = [...]int{1, 2, 3, 4}
+	fmt.Println(arr3)
 }
