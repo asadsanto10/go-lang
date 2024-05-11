@@ -46,4 +46,9 @@ func main() {
 	fmt.Println(len(arr2))
 	var arr3 = [...]int{1, 2, 3, 4}
 	fmt.Println(arr3)
+
+	// slice
+	mySlice := [5]int{1, 2, 3, 4}
+	fmt.Println(len(mySlice))
+	fmt.Println(cap(mySlice))
 }
