@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"reflect"
 	"time"
 )
@@ -51,4 +52,6 @@ func main() {
 	mySlice := [5]int{1, 2, 3, 4}
 	fmt.Println(len(mySlice))
 	fmt.Println(cap(mySlice))
+
+	fmt.Println("number is", rand.Intn(10))
 }
