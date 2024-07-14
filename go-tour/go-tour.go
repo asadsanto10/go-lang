@@ -139,6 +139,51 @@ func switchStatement() {
 
 }
 
+// switch with no condition
+func switchCondition() {
+	time := time.Now()
+	switch {
+	case time.Hour() < 12:
+		fmt.Println("good afternoon")
+	case time.Hour() < 17:
+		fmt.Println("good afternoon")
+	default:
+		fmt.Println("good evening")
+	}
+}
+
+func defers() {
+	// defer fmt.Println("with defers 1 ")
+	// defer fmt.Println("with defers 2 ")
+	// defer fmt.Println("with defers 3 ")
+	// defer fmt.Println("with defers 4 ")
+	// defer fmt.Println("with defers 5 ")
+	// fmt.Println("without defers 0")
+
+	fmt.Println("contining")
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+}
+
+// Pointers
+
+func pointers() {
+	i, j := 42, 2701
+	p := &i
+	fmt.Println(*p)
+	*p = 21
+	fmt.Println(p)
+	fmt.Println(i)
+
+	p = &j
+	*p = *p / 37
+
+	fmt.Println(j)
+}
+
 func main() {
 	fmt.Println("random number is", rand.Intn(10))
 	fmt.Println("math number is", math.Sqrt(7))
@@ -161,6 +206,11 @@ func main() {
 	fmt.Println(pow(2, 2, 10))
 	switchStatement()
 
-	fmt.Print(time.Now().ISOWeek())
+	// fmt.Println(time.Now().ISOWeek())
+
+	switchCondition()
+
+	// defers()
+	pointers()
 
 }
