@@ -169,7 +169,6 @@ func defers() {
 }
 
 // Pointers
-
 func pointers() {
 	i, j := 42, 2701
 	p := &i
@@ -182,6 +181,58 @@ func pointers() {
 	*p = *p / 37
 
 	fmt.Println(j)
+}
+
+// Structs
+func structsType() {
+	type Vertex struct {
+		x int
+		y int
+	}
+
+	v := Vertex{1, 3}
+	v.x = 4
+
+	fmt.Println(v)
+
+	// pointer to struct
+	p := &v
+	ab := &p
+	p.x = 585
+	fmt.Println("change value")
+	fmt.Println(p)
+	fmt.Println(v)
+	fmt.Println("ab", ab)
+
+	// Struct Literals
+
+	type Column struct {
+		a, v int
+	}
+
+	var (
+		v1  = Column{10, 11}
+		v2  = Column{a: 15}
+		v3  = Column{}
+		poo = &v1
+	)
+
+	// fmt.Println(v1, poo, v2, V3)
+	fmt.Println(v1, v2, v3, *poo)
+
+}
+
+// arrays
+func arrays() {
+	var a [2]string
+	fmt.Println("::::::::Arrays::::::::")
+	a[0] = "hello"
+	a[1] = "world"
+	fmt.Println(a[0], a[1])
+	fmt.Println(a)
+
+	primes := [6]int{2, 3, 4, 7, 11, 13}
+	
 }
 
 func main() {
@@ -212,5 +263,8 @@ func main() {
 
 	// defers()
 	pointers()
+
+	structsType()
+	arrays()
 
 }
